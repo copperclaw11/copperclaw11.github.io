@@ -1,0 +1,60 @@
+body {
+    background-color: lightpink;
+}
+img {
+    height: 500px;
+    border-width: 5px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:black;
+    width: 350px;
+}
+.section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-width: 5px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:black;
+    background-color: 77DD77;
+}
+.sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+a:link {
+    background-color: lightpink;
+    border-width: 5px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:black;
+    color:black;
+}
+a:visited {
+    background-color: lightpink;
+    border-width: 5px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:black;
+    color: blue;
+}
+a:hover {
+    background-color: lightpink;
+    border-width: 5px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:black;
+    color: black;
+}
+a:active {
+    background-color: lightpink;
+    border-width: 5px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:black;
+    color: black;
+}
