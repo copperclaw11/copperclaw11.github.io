@@ -244,23 +244,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateParallax);
 
-    // Typing effect for hero title
+    // Enhanced typing effect for hero title
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        // Start typing effect after a short delay
-        setTimeout(typeWriter, 500);
+        // Remove the existing typing effect and let CSS handle it
+        // The CSS animation will create a smoother typing effect
+        heroTitle.style.animationDelay = '0.5s';
     }
 
     // Smooth reveal animations for sections
