@@ -6,24 +6,26 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary-color: #f59e0b;
-    --accent-color: #10b981;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-light: #9ca3af;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-dark: #111827;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    /* Earthy Color Palette */
+    --primary-color: #8B4513; /* Saddle Brown */
+    --primary-dark: #654321; /* Dark Brown */
+    --secondary-color: #228B22; /* Forest Green */
+    --accent-color: #D2691E; /* Chocolate */
+    --text-primary: #2F1B14; /* Dark Brown */
+    --text-secondary: #5D4037; /* Brown Grey */
+    --text-light: #8D6E63; /* Light Brown */
+    --bg-primary: #FDF5E6; /* Old Lace */
+    --bg-secondary: #C8E6C9; /* Light Sage Green */
+    --bg-dark: #2F1B14; /* Dark Brown */
+    --border-color: #D2B48C; /* Tan */
+    --shadow-sm: 0 2px 4px 0 rgba(47, 27, 20, 0.1);
+    --shadow-md: 0 4px 8px -1px rgba(47, 27, 20, 0.15), 0 2px 4px -2px rgba(47, 27, 20, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(47, 27, 20, 0.15), 0 4px 6px -4px rgba(47, 27, 20, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(47, 27, 20, 0.15), 0 8px 10px -6px rgba(47, 27, 20, 0.1);
+    --gradient-primary: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    --gradient-secondary: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+    --gradient-accent: linear-gradient(135deg, #D2691E 0%, #FF8C00 100%);
+    --gradient-earth: linear-gradient(135deg, #8B4513 0%, #D2B48C 100%);
 }
 
 html {
@@ -35,6 +37,10 @@ body {
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(34, 139, 34, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(210, 105, 30, 0.03) 0%, transparent 50%);
 }
 
 .container {
@@ -61,7 +67,7 @@ p {
 }
 
 .highlight {
-    background: var(--gradient-primary);
+    background: var(--gradient-earth);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -74,7 +80,7 @@ p {
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
@@ -82,6 +88,7 @@ p {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .btn::before {
@@ -139,7 +146,7 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(200, 230, 201, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -158,7 +165,7 @@ p {
 .nav-brand h1 {
     font-size: 1.5rem;
     margin: 0;
-    background: var(--gradient-primary);
+    background: var(--gradient-earth);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -191,7 +198,7 @@ p {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient-primary);
+    background: var(--gradient-earth);
     transition: width 0.3s ease;
 }
 
@@ -219,7 +226,7 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-earth);
     color: white;
     position: relative;
     overflow: hidden;
@@ -232,8 +239,11 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
+    background-image: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'),
+        radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    opacity: 0.4;
 }
 
 .hero-content {
@@ -284,7 +294,7 @@ p {
     position: absolute;
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -293,7 +303,8 @@ p {
     animation: float 6s ease-in-out infinite;
     animation-delay: var(--delay);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .floating-element:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
@@ -315,7 +326,7 @@ p {
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: var(--gradient-primary);
+    background: var(--gradient-earth);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -332,6 +343,9 @@ p {
 .projects {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(34, 139, 34, 0.03) 0%, transparent 50%);
 }
 
 .projects-grid {
@@ -342,11 +356,12 @@ p {
 
 .project-card {
     background: white;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
     position: relative;
+    border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
@@ -356,7 +371,7 @@ p {
 
 .project-image {
     height: 250px;
-    background: var(--gradient-primary);
+    background: var(--gradient-earth);
     position: relative;
     display: flex;
     align-items: center;
@@ -370,7 +385,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(47, 27, 20, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -390,18 +405,19 @@ p {
 }
 
 .tech-tag {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     color: var(--text-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
     font-size: 0.875rem;
     font-weight: 500;
+    border: 1px solid var(--border-color);
 }
 
 .project-icon {
     font-size: 4rem;
     color: white;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .project-content {
@@ -434,6 +450,7 @@ p {
     border-radius: 1rem;
     font-size: 0.875rem;
     font-weight: 500;
+    border: 1px solid var(--border-color);
 }
 
 .project-actions {
@@ -446,6 +463,9 @@ p {
 .skills {
     padding: 6rem 0;
     background: white;
+    background-image: 
+        radial-gradient(circle at 10% 90%, rgba(210, 105, 30, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(34, 139, 34, 0.03) 0%, transparent 50%);
 }
 
 .skills-grid {
@@ -457,8 +477,10 @@ p {
 .skill-category {
     background: var(--bg-secondary);
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .skill-title {
@@ -479,12 +501,15 @@ p {
     gap: 1rem;
     padding: 1rem;
     background: white;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .skill-item:hover {
     transform: translateX(10px);
+    box-shadow: var(--shadow-md);
 }
 
 .skill-item i {
@@ -498,6 +523,9 @@ p {
 .contact {
     padding: 6rem 0;
     background: var(--bg-secondary);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(34, 139, 34, 0.05) 0%, transparent 50%);
 }
 
 .contact-content {
@@ -519,9 +547,10 @@ p {
     gap: 1rem;
     padding: 1.5rem;
     background: white;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .contact-item:hover {
@@ -549,8 +578,9 @@ p {
 .contact-form {
     background: white;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -562,16 +592,18 @@ p {
     width: 100%;
     padding: 1rem;
     border: 2px solid var(--border-color);
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     font-size: 1rem;
     transition: border-color 0.3s ease;
     font-family: inherit;
+    background: var(--bg-primary);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
+    background: white;
 }
 
 /* Footer */
@@ -579,6 +611,9 @@ p {
     background: var(--bg-dark);
     color: white;
     padding: 3rem 0 1rem;
+    background-image: 
+        radial-gradient(circle at 30% 70%, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(34, 139, 34, 0.2) 0%, transparent 50%);
 }
 
 .footer-content {
@@ -590,7 +625,7 @@ p {
 
 .footer-brand h3 {
     margin-bottom: 0.5rem;
-    background: var(--gradient-primary);
+    background: var(--gradient-earth);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -632,6 +667,7 @@ p {
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-social a:hover {
