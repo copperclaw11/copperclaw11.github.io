@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deck Maker - Clash Stats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Clash Stats</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="deck-maker.html">Deck Maker</a></li>
+        <li><a href="strategies.html">Strategies</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="merge-tactics.html">Merge Tactics</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Deck Maker</h2>
+      <div id="deck-evo-row" style="display: flex; align-items: flex-start; gap: 24px; justify-content: center;">
+        <div id="evolutions-area" class="evolutions-area">
+          <h3>Evolutions</h3>
+          <div id="evolutions-drop" class="evolutions-drop">Drag up to 2 cards here</div>
+        </div>
+        <div id="deck-area">
+          <div id="card-legend" class="card-legend">
+            <div class="legend-item">
+              <div class="legend-elixir">3</div>
+              <span>Elixir Cost</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-evolution">★</div>
+              <span>Can Evolve</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-mirror">?</div>
+              <span>Elixir Varies</span>
+            </div>
+          </div>
+          <h3>Your Deck (8 cards max)</h3>
+          <div id="deck" class="deck-cards"></div>
+        </div>
+      </div>
+      <div id="card-list-area">
+        <div id="deck-buttons" class="deck-buttons-left">
+          <button id="clear-deck">Clear Deck</button>
+          <button id="save-deck">Save Deck</button>
+          <button id="suggest-deck">Suggest Cards</button>
+          <div id="average-elixir" class="average-elixir">Average: --</div>
+        </div>
+        <h3>All Cards</h3>
+        <div id="card-list" class="card-list"></div>
+      </div>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html> 

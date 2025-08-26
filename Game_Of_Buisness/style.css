@@ -1,0 +1,617 @@
+/* Game of Business - Intergalactic Empire Builder */
+/* Color Scheme: Dreamy Green Continents, Majestic Lavender Seas */
+
+:root {
+    --primary-green: #4ade80;
+    --secondary-green: #22c55e;
+    --dark-green: #15803d;
+    --lavender: #a855f7;
+    --light-lavender: #c084fc;
+    --dark-lavender: #7c3aed;
+    --space-black: #0f0f23;
+    --space-gray: #1a1a2e;
+    --light-gray: #e5e7eb;
+    --accent-blue: #3b82f6;
+    --warning-orange: #f59e0b;
+    --success-green: #10b981;
+    --error-red: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: linear-gradient(135deg, var(--space-black) 0%, var(--space-gray) 100%);
+    color: var(--light-gray);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+#game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, var(--space-gray) 0%, var(--dark-green) 50%, var(--space-gray) 100%);
+    border-bottom: 2px solid var(--primary-green);
+    box-shadow: 0 4px 20px rgba(74, 222, 128, 0.3);
+}
+
+.header-left h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-green);
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.business-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.business-info span {
+    font-size: 0.9rem;
+    color: var(--light-lavender);
+}
+
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.money-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.money-label {
+    color: var(--light-lavender);
+}
+
+#money-amount {
+    color: var(--primary-green);
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+
+.header-right {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    color: var(--space-black);
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--lavender) 0%, var(--dark-lavender) 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Main Game Area */
+#game-main {
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+/* Story Panel */
+#story-panel {
+    width: 300px;
+    background: var(--space-gray);
+    border: 2px solid var(--lavender);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.2);
+}
+
+#story-panel h2 {
+    font-family: 'Orbitron', monospace;
+    color: var(--light-lavender);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+#story-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid var(--lavender);
+}
+
+.story-text {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--light-gray);
+}
+
+#story-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.choice-btn {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--dark-lavender) 0%, var(--lavender) 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.choice-btn:hover {
+    background: linear-gradient(135deg, var(--lavender) 0%, var(--light-lavender) 100%);
+    transform: translateX(5px);
+}
+
+/* Map Panel */
+#map-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#map-container {
+    position: relative;
+    flex: 1;
+    background: var(--space-gray);
+    border: 3px solid var(--primary-green);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(74, 222, 128, 0.2);
+}
+
+#world-map {
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 8px;
+}
+
+#map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#city-info {
+    position: absolute;
+    background: rgba(15, 15, 35, 0.95);
+    border: 2px solid var(--primary-green);
+    border-radius: 8px;
+    padding: 1rem;
+    pointer-events: all;
+    backdrop-filter: blur(10px);
+}
+
+#city-info.hidden {
+    display: none;
+}
+
+#city-info h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+#map-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+#map-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Management Panel */
+#management-panel {
+    width: 350px;
+    background: var(--space-gray);
+    border: 2px solid var(--primary-green);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 8px 25px rgba(74, 222, 128, 0.2);
+}
+
+#management-panel h2 {
+    font-family: 'Orbitron', monospace;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.business-details, .locations, .products {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--primary-green);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.business-details h3, .locations h3, .products h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+#business-stats p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#business-stats strong {
+    color: var(--light-lavender);
+}
+
+.no-locations, .no-products {
+    color: var(--light-gray);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Game Slots */
+#game-slots {
+    padding: 1rem 2rem;
+    background: var(--space-gray);
+    border-top: 2px solid var(--lavender);
+}
+
+#game-slots h3 {
+    font-family: 'Orbitron', monospace;
+    color: var(--light-lavender);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#slots-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(168, 85, 247, 0.1);
+    border: 2px solid var(--lavender);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.slot:hover {
+    background: rgba(168, 85, 247, 0.2);
+    transform: translateY(-2px);
+}
+
+.slot.active {
+    border-color: var(--primary-green);
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.slot-number {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-lavender);
+}
+
+.slot-status {
+    font-size: 0.8rem;
+    color: var(--light-gray);
+    text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--space-gray);
+    border: 2px solid var(--primary-green);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    font-family: 'Orbitron', monospace;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--light-lavender);
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--lavender);
+    border-radius: 6px;
+    color: var(--light-gray);
+    font-family: 'Exo 2', sans-serif;
+}
+
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--lavender);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}
+
+.search-result-item {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(168, 85, 247, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--space-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#loading-overlay.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--lavender);
+    border-top: 4px solid var(--primary-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #game-main {
+        flex-direction: column;
+    }
+    
+    #story-panel, #management-panel {
+        width: 100%;
+        height: 200px;
+    }
+    
+    #map-panel {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    #game-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .header-left, .header-center, .header-right {
+        width: 100%;
+    }
+    
+    .header-right {
+        justify-content: center;
+    }
+    
+    #slots-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--space-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--lavender);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-lavender);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-success {
+    color: var(--success-green);
+}
+
+.text-warning {
+    color: var(--warning-orange);
+}
+
+.text-error {
+    color: var(--error-red);
+} 

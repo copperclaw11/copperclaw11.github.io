@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootGolf Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>⚽ FootGolf Simulator</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Hole:</span>
+                    <span id="current-hole">1</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Par:</span>
+                    <span id="current-par">3</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Strokes:</span>
+                    <span id="stroke-count">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Total Score:</span>
+                    <span id="total-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <div class="controls-panel">
+                <div class="power-meter">
+                    <label for="power-slider">Power: <span id="power-value">50</span>%</label>
+                    <input type="range" id="power-slider" min="10" max="100" value="50">
+                </div>
+                
+                <div class="direction-control">
+                    <label>Direction:</label>
+                    <div class="direction-buttons">
+                        <button id="dir-up" class="dir-btn">↑</button>
+                        <div class="horizontal-buttons">
+                            <button id="dir-left" class="dir-btn">←</button>
+                            <button id="dir-right" class="dir-btn">→</button>
+                        </div>
+                        <button id="dir-down" class="dir-btn">↓</button>
+                    </div>
+                </div>
+                
+                <button id="kick-btn" class="kick-button">KICK!</button>
+                <button id="reset-btn" class="reset-button">Reset Ball</button>
+                <button id="next-hole-btn" class="next-hole-button" style="display: none;">Next Hole</button>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Set the power using the slider</li>
+                    <li>Choose direction with arrow buttons</li>
+                    <li>Click KICK! to shoot the ball</li>
+                    <li>Get the ball in the hole with the fewest strokes!</li>
+                </ul>
+            </div>
+            
+            <div class="course-info">
+                <h3>Course Layout:</h3>
+                <div id="course-description">Hole 1: A straight shot to the green</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

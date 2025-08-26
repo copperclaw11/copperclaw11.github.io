@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Business - Intergalactic Empire Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header with money and business info -->
+        <header id="game-header">
+            <div class="header-left">
+                <h1>Game of Business</h1>
+                <div class="business-info">
+                    <span id="business-name">No Business Selected</span>
+                    <span id="business-type">-</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="money-display">
+                    <span class="money-label">Capital:</span>
+                    <span id="money-amount">$0</span>
+                </div>
+                <div class="stats">
+                    <span id="customer-count">0 Customers</span>
+                    <span id="country-count">0 Countries</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="save-game" class="btn-secondary">Save</button>
+                <button id="load-game" class="btn-secondary">Load</button>
+                <button id="new-business" class="btn-primary">New Business</button>
+            </div>
+        </header>
+
+        <!-- Main game area -->
+        <main id="game-main">
+            <!-- Left panel: Real-time story and choices -->
+            <section id="story-panel">
+                <h2>Business Chronicle</h2>
+                <div id="story-content">
+                    <p class="story-text">Welcome to the dreamy green continents and majestic lavender seas of Nova Terra! Your business journey begins here...</p>
+                </div>
+                <div id="story-choices">
+                    <button class="choice-btn" data-choice="1">Start your first business venture</button>
+                    <button class="choice-btn" data-choice="2">Research the local market</button>
+                    <button class="choice-btn" data-choice="3">Network with local entrepreneurs</button>
+                </div>
+            </section>
+
+            <!-- Center panel: World map -->
+            <section id="map-panel">
+                <div id="map-container">
+                    <canvas id="world-map" width="800" height="600"></canvas>
+                    <div id="map-overlay">
+                        <div id="city-info" class="hidden">
+                            <h3 id="city-name"></h3>
+                            <p id="city-population"></p>
+                            <button id="expand-here" class="btn-primary">Expand Here</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="map-controls">
+                    <button id="zoom-in" class="btn-secondary">+</button>
+                    <button id="zoom-out" class="btn-secondary">-</button>
+                    <button id="reset-view" class="btn-secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Right panel: Business management -->
+            <section id="management-panel">
+                <h2>Business Management</h2>
+                
+                <!-- Action buttons -->
+                <div class="action-buttons">
+                    <button id="new-expansion" class="btn-primary">New Expansion</button>
+                    <button id="new-item" class="btn-primary">New Item</button>
+                    <button id="advertise" class="btn-primary">Advertise</button>
+                </div>
+
+                <!-- Business details -->
+                <div class="business-details">
+                    <h3>Your Business</h3>
+                    <div id="business-stats">
+                        <p><strong>Type:</strong> <span id="current-business-type">-</span></p>
+                        <p><strong>Founded:</strong> <span id="founded-date">-</span></p>
+                        <p><strong>Employees:</strong> <span id="employee-count">0</span></p>
+                        <p><strong>Products:</strong> <span id="product-count">0</span></p>
+                    </div>
+                </div>
+
+                <!-- Locations -->
+                <div class="locations">
+                    <h3>Locations</h3>
+                    <div id="locations-list">
+                        <p class="no-locations">No locations yet</p>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="products">
+                    <h3>Products</h3>
+                    <div id="products-list">
+                        <p class="no-products">No products yet</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Game slots -->
+        <footer id="game-slots">
+            <h3>Business Slots</h3>
+            <div id="slots-container">
+                <div class="slot" data-slot="1">
+                    <span class="slot-number">1</span>
+                    <span class="slot-status">Empty</span>
+                </div>
+                <div class="slot" data-slot="2">
+                    <span class="slot-number">2</span>
+                    <span class="slot-status">Empty</span>
+                </div>
+                <div class="slot" data-slot="3">
+                    <span class="slot-number">3</span>
+                    <span class="slot-status">Empty</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="new-business-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Start New Business</h2>
+            <form id="new-business-form">
+                <div class="form-group">
+                    <label for="business-type-search">Business Type:</label>
+                    <input type="text" id="business-type-search" placeholder="Search business types...">
+                    <div id="business-type-results" class="search-results"></div>
+                </div>
+                <div class="form-group">
+                    <label for="business-name-input">Business Name:</label>
+                    <input type="text" id="business-name-input" placeholder="Enter your business name">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-new-business" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Start Business</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="expansion-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>New Expansion</h2>
+            <div id="expansion-map-container">
+                <canvas id="expansion-map" width="600" height="400"></canvas>
+            </div>
+            <div class="form-actions">
+                <button id="cancel-expansion" class="btn-secondary">Cancel</button>
+                <button id="confirm-expansion" class="btn-primary">Expand Here</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="new-item-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Create New Product</h2>
+            <form id="new-item-form">
+                <div class="form-group">
+                    <label for="item-name">Product Name:</label>
+                    <input type="text" id="item-name" placeholder="Enter product name">
+                </div>
+                <div class="form-group">
+                    <label for="item-description">Description:</label>
+                    <textarea id="item-description" placeholder="Describe your product"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item-price">Price:</label>
+                    <input type="number" id="item-price" min="0" step="0.01" placeholder="0.00">
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-new-item" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Create Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="advertise-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Advertise Your Business</h2>
+            <div class="form-group">
+                <label for="advertise-region">Select Region:</label>
+                <select id="advertise-region">
+                    <option value="">Choose a region...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="advertise-budget">Budget:</label>
+                <input type="number" id="advertise-budget" min="1000" step="1000" placeholder="1000">
+            </div>
+            <div class="form-actions">
+                <button id="cancel-advertise" class="btn-secondary">Cancel</button>
+                <button id="confirm-advertise" class="btn-primary">Launch Campaign</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="hidden">
+        <div class="loading-spinner"></div>
+        <p>Loading game world...</p>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="world.js"></script>
+    <script src="business.js"></script>
+    <script src="story.js"></script>
+    <script src="ui.js"></script>
+    <script>
+        // Initialize game after all scripts are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing game...');
+            
+            // Wait a bit for all scripts to be fully loaded
+            setTimeout(() => {
+                try {
+                    console.log('Checking world availability...');
+                    console.log('window.world:', window.world);
+                    
+                    if (window.world) {
+                        console.log('World object exists');
+                        console.log('Countries array:', window.world.countries);
+                        console.log('Countries length:', window.world.countries ? window.world.countries.length : 'undefined');
+                        
+                        if (window.world.countries && window.world.countries.length > 0) {
+                            console.log('World is available with', window.world.countries.length, 'countries');
+                            
+                            // Initialize game systems
+                            console.log('Creating GameOfBusiness...');
+                            window.game = new GameOfBusiness();
+                            console.log('Creating UIManager...');
+                            window.uiManager = new UIManager();
+                            
+                            // Show loading initially
+                            window.uiManager.updateLoadingState(true);
+                            
+                            // Hide loading after a short delay
+                            setTimeout(() => {
+                                window.uiManager.updateLoadingState(false);
+                                console.log('Game initialization complete');
+                            }, 2000);
+                            
+                        } else {
+                            console.error('World has no countries!');
+                            console.log('Countries array:', window.world.countries);
+                            alert('Error: World generation failed - no countries created. Please refresh the page.');
+                        }
+                    } else {
+                        console.error('World object is not available!');
+                        console.log('Available global objects:', Object.keys(window).filter(key => key.includes('world') || key.includes('World')));
+                        alert('Error: World generation failed - world object not created. Please refresh the page.');
+                    }
+                } catch (error) {
+                    console.error('Error during game initialization:', error);
+                    console.error('Error stack:', error.stack);
+                    alert('Error initializing game: ' + error.message);
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html> 
