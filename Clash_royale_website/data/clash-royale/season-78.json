@@ -1,0 +1,192 @@
+{
+  "season": {
+    "number": 78,
+    "name": "Heroic Holidays",
+    "dates": "December 2025",
+    "headline": "Introduction of Heroes, Royal Hogs Evolution (Flying Pigs), Trophy Road expansion, and comprehensive balance changes",
+    "metaTitle": "Clash Royale Season 78 (Dec 2025) — Heroic Holidays | cooper-huff.com",
+    "metaDescription": "Explore Clash Royale Season 78: Heroic Holidays featuring Heroes system, Royal Hogs Evolution, Trophy Road expansion, and December 2025 balance changes.",
+    "updatedOn": "2025-12-01"
+  },
+  "heroes": {
+    "title": "Heroes System Introduction",
+    "description": "New card rarity featuring enhanced versions of classic troops with unique abilities",
+    "heroes": [
+      {
+        "name": "Hero Mini P.E.K.K.A",
+        "elixir": 4,
+        "ability": "Breakfast Boost",
+        "abilityCost": 2,
+        "abilityDescription": "Each pancake consumed levels him up by one",
+        "unlockRequirement": "200 Hero Fragments"
+      },
+      {
+        "name": "Hero Musketeer",
+        "elixir": 4,
+        "ability": "Trusty Turret",
+        "abilityCost": 2,
+        "abilityDescription": "Deploys a turret for additional firepower",
+        "unlockRequirement": "200 Hero Fragments"
+      },
+      {
+        "name": "Hero Knight",
+        "elixir": 3,
+        "ability": "Triumphant Taunt",
+        "abilityCost": 2,
+        "abilityDescription": "Taunts nearby enemies and gains a shield",
+        "unlockRequirement": "200 Hero Fragments"
+      },
+      {
+        "name": "Hero Giant",
+        "elixir": 5,
+        "ability": "Heroic Hurl",
+        "abilityCost": 2,
+        "abilityDescription": "Throws the nearest troop, stunning them and swapping lanes",
+        "unlockRequirement": "200 Hero Fragments"
+      }
+    ],
+    "heroSlots": [
+      {
+        "slot": 1,
+        "unlockArena": 15,
+        "unlockTrophies": 5000
+      },
+      {
+        "slot": 2,
+        "unlockArena": 25,
+        "unlockTrophies": 10000
+      }
+    ],
+    "fragments": {
+      "required": 200,
+      "sources": [
+        "Hero Boxes",
+        "Special Events",
+        "Pass Royale (Arena 15+)",
+        "Duplicate Heroes convert to fragments"
+      ]
+    }
+  },
+  "newEvolutions": [
+    {
+      "name": "Royal Hogs Evolution",
+      "description": "Flying Pigs - Deploy as flying troops with rainbow trails, immune to ground attacks. Crash landing deals area damage on buildings. After landing, behave like normal Royal Hogs.",
+      "cycleRequirement": 2,
+      "totalElixir": 10,
+      "baseStats": "Same as regular Royal Hogs (HP and damage)"
+    }
+  },
+  "balanceChanges": {
+    "date": "December 2025",
+    "nerfs": [
+      {
+        "card": "Baby Dragon Evolution",
+        "change": "Speedup Allies percentage reduced from 50% to 30%"
+      },
+      {
+        "card": "Cannon Evolution",
+        "change": "Barrage Damage decreased from 304 to 281"
+      },
+      {
+        "card": "Executioner Evolution",
+        "change": "Close Quarters Damage reduced from 294 to 268"
+      }
+    ],
+    "buffs": [
+      {
+        "card": "Magic Archer",
+        "change": "Damage increased"
+      },
+      {
+        "card": "Void",
+        "change": "Attack speed improved"
+      },
+      {
+        "card": "Freeze",
+        "change": "Duration increased"
+      },
+      {
+        "card": "Goblin Demolisher",
+        "change": "Damage increased"
+      }
+    ]
+  },
+  "trophyRoad": {
+    "expansion": {
+      "previousMax": 10000,
+      "newMax": 12000,
+      "newArenas": [
+        {
+          "number": 25,
+          "name": "Lumberlove Cabin",
+          "trophies": 10000
+        },
+        {
+          "number": 26,
+          "name": "Royal Road",
+          "trophies": 10500
+        },
+        {
+          "number": 27,
+          "name": "Musketeer Street",
+          "trophies": 11000
+        },
+        {
+          "number": 28,
+          "name": "Summit of Heroes",
+          "trophies": 11500
+        }
+      ]
+    }
+  },
+  "passRoyale": {
+    "rework": {
+      "description": "Pass Royale split into Free and Diamond tracks",
+      "tracks": [
+        {
+          "name": "Free Pass",
+          "description": "Available to all players with standard rewards"
+        },
+        {
+          "name": "Diamond Pass",
+          "description": "Premium track with enhanced rewards including Hero Boxes (Arena 15+)"
+        }
+      ],
+      "heroBoxes": "Players at Arena 15 and above gain access to monthly Heroes and Hero Boxes"
+    }
+  },
+  "crystals": {
+    "title": "Crystals Currency",
+    "description": "New endgame currency generated from surplus Max-Level card copies",
+    "usage": [
+      "Purchase cosmetics (emotes, etc.)",
+      "Prestige items",
+      "Meaningful use for extra cards for long-time players"
+    ],
+    "generation": "Automatically from surplus Max-Level card copies across all rarities"
+  },
+  "sources": [
+    {
+      "name": "Official Season 78 Announcement",
+      "url": "https://clashroyale.com/blog/news/season-78-heroic-holidays",
+      "description": "Supercell's official Season 78 announcement"
+    },
+    {
+      "name": "Heroes Update Blog",
+      "url": "https://clashroyale.com/blog/news/december-2025-heroes-update",
+      "description": "Official Heroes system introduction"
+    },
+    {
+      "name": "December 2025 Balance Changes",
+      "url": "https://clashroyale.com/blog/news/december-2025-balance-changes",
+      "description": "Official December 2025 balance changes"
+    },
+    {
+      "name": "RoyaleAPI Season Overview",
+      "url": "https://royaleapi.com/season/78",
+      "description": "Comprehensive Season 78 overview and statistics"
+    }
+  ]
+}
+
+

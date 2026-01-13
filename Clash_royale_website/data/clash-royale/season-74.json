@@ -1,0 +1,147 @@
+{
+  "season": {
+    "number": 74,
+    "name": "Fired Up!",
+    "dates": "Aug 4 – Sep 1, 2025",
+    "headline": "Furnace rework + Furnace Evolution, Classic 2v2 return, themed events and milestone rewards",
+    "metaTitle": "Clash Royale Season 74 (Aug 2025) — Fired Up! | cooper-huff.com",
+    "metaDescription": "Explore Clash Royale Season 74: Fired Up! featuring the Furnace rework, new Evolution, balance changes, and themed events. Complete guide to August 2025 season.",
+    "updatedOn": "2025-08-30"
+  },
+  "events": [
+    {
+      "name": "Furnace Evolution Draft",
+      "dates": "Aug 4–18",
+      "description": "Test the new Furnace Evolution in this special draft event"
+    },
+    {
+      "name": "Release the Fire Spirits",
+      "dates": "Aug 18–Sep 1",
+      "description": "Themed event celebrating the Furnace rework and Fire Spirits"
+    },
+    {
+      "name": "Classic 2v2",
+      "dates": "Throughout August",
+      "description": "Return of the beloved Classic 2v2 game mode"
+    }
+  ],
+  "furnaceRework": {
+    "title": "Furnace Rework",
+    "description": "Furnace is now a walking spawner troop with a new attack style",
+    "changes": [
+      "Now spawns Fire Spirits one at a time",
+      "New walking spawner troop mechanics",
+      "Updated attack style for better gameplay"
+    ],
+    "evolution": {
+      "name": "Furnace Evolution",
+      "description": "Spawns Fire Spirits faster than the base version"
+    }
+  },
+  "balanceChanges": {
+    "date": "August 6, 2025",
+    "furnaceHotfix": {
+      "spawnSpeed": "5s → 7s",
+      "hp": "896 → 727"
+    },
+    "nerfs": [
+      {
+        "card": "Cannoneer",
+        "change": "Damage reduced"
+      },
+      {
+        "card": "Dagger Duchess",
+        "change": "Damage and health reduced"
+      },
+      {
+        "card": "Royal Chef",
+        "change": "Damage reduced"
+      },
+      {
+        "card": "Giant Snowball Evolution",
+        "change": "Damage and slow effect reduced"
+      },
+      {
+        "card": "Skeleton Barrel Evolution",
+        "change": "Skeleton count reduced"
+      },
+      {
+        "card": "Miner",
+        "change": "Damage reduced"
+      },
+      {
+        "card": "Rage",
+        "change": "Duration and effect reduced"
+      },
+      {
+        "card": "Spear Goblins",
+        "change": "Damage reduced"
+      },
+      {
+        "card": "Firecracker",
+        "change": "Damage and range reduced"
+      }
+    ],
+    "buffs": [
+      {
+        "card": "Spirit Empress",
+        "change": "Air & Ground damage increased"
+      },
+      {
+        "card": "Phoenix",
+        "change": "Damage and health increased"
+      },
+      {
+        "card": "Golem",
+        "change": "Health increased"
+      },
+      {
+        "card": "Zappies",
+        "change": "Attack speed increased"
+      },
+      {
+        "card": "Minions",
+        "change": "Damage increased"
+      },
+      {
+        "card": "Minion Horde",
+        "change": "Damage increased"
+      }
+    ],
+    "reworks": [
+      {
+        "card": "Witch Evolution",
+        "change": "Complete rework of mechanics and abilities"
+      },
+      {
+        "card": "Dart Goblin",
+        "change": "Attack pattern and damage reworked"
+      },
+      {
+        "card": "Dart Goblin Evolution",
+        "change": "Evolution abilities reworked"
+      },
+      {
+        "card": "Goblin Hut",
+        "change": "Spawn mechanics and health reworked"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Official Season Announcement",
+      "url": "https://clashroyale.com/blog/news/season-74-fired-up",
+      "description": "Supercell's official Season 74 announcement"
+    },
+    {
+      "name": "Balance Changes Blog",
+      "url": "https://clashroyale.com/blog/news/august-6-balance-changes",
+      "description": "Official August 6, 2025 balance changes"
+    },
+    {
+      "name": "RoyaleAPI Season Overview",
+      "url": "https://royaleapi.com/season/74",
+      "description": "Comprehensive Season 74 overview and statistics"
+    }
+  ]
+}

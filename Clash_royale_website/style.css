@@ -717,48 +717,6 @@ main {
   }
 }
 
-/* Merge Tactics Page Styles */
-.merge-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.merge-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 15px;
-  border: 2px solid var(--accent-color);
-  box-shadow: 0 8px 25px rgba(245, 197, 66, 0.2);
-}
-
-.merge-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.merge-card img:hover {
-  transform: scale(1.1);
-}
-
-.merge-card img.evolved {
-  border: 3px solid var(--accent-color);
-  box-shadow: 0 0 15px rgba(245, 197, 66, 0.5);
-}
-
-.merge-arrow {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--accent-color);
-  animation: pulse 2s ease-in-out infinite;
-}
 
 .content-section {
   padding: 80px 40px;
@@ -808,100 +766,6 @@ main {
   opacity: 0.9;
 }
 
-.merge-examples {
-  padding: 80px 40px;
-  background: var(--secondary-bg);
-}
-
-.merge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.merge-example {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.merge-example:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.merge-example h3 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.5rem;
-  margin: 0 0 25px 0;
-  color: var(--accent-color);
-}
-
-.merge-sequence {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.merge-step {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.merge-step img {
-  width: 50px;
-  height: 50px;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  transition: transform 0.3s ease;
-}
-
-.merge-step img:hover {
-  transform: scale(1.1);
-}
-
-.merge-step.evolved img {
-  border: 2px solid var(--accent-color);
-  box-shadow: 0 0 10px rgba(245, 197, 66, 0.3);
-}
-
-.merge-step .elixir {
-  background: var(--accent-color);
-  color: #23272a;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.merge-operator {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--accent-color);
-  margin: 0 5px;
-}
-
-.merge-description {
-  margin: 0;
-  color: var(--text-color);
-  opacity: 0.9;
-  font-style: italic;
-}
 
 .feature-highlight {
   display: flex;
@@ -938,84 +802,6 @@ main {
   color: var(--accent-color);
 }
 
-.star-upgrade-section {
-  padding: 80px 40px;
-  background: var(--primary-bg);
-}
-
-.star-upgrade-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.star-upgrade-card {
-  background: var(--card-bg);
-  padding: 30px 25px;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.star-upgrade-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(245, 197, 66, 0.1), transparent);
-  transition: left 0.5s ease;
-}
-
-.star-upgrade-card:hover::before {
-  left: 100%;
-}
-
-.star-upgrade-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.star-level {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  display: block;
-  text-shadow: 0 0 10px rgba(245, 197, 66, 0.5);
-}
-
-.star-upgrade-card h3 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.3rem;
-  margin: 0 0 15px 0;
-  color: var(--accent-color);
-}
-
-.star-upgrade-card p {
-  margin: 0 0 20px 0;
-  line-height: 1.6;
-  color: var(--text-color);
-  opacity: 0.9;
-}
-
-.star-upgrade-card ul {
-  margin: 0;
-  padding-left: 20px;
-  text-align: left;
-  color: var(--text-color);
-  opacity: 0.9;
-}
-
-.star-upgrade-card li {
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
 
 .traits-section {
   padding: 80px 40px;
@@ -1151,96 +937,11 @@ main {
   line-height: 1.5;
 }
 
-.tips-section {
-  padding: 80px 40px;
-  background: var(--secondary-bg);
-}
-
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.tip-card {
-  background: var(--card-bg);
-  padding: 30px 25px;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.tip-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.tip-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.tip-card h3 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.3rem;
-  margin: 0 0 15px 0;
-  color: var(--accent-color);
-}
-
-.tip-card p {
-  margin: 0;
-  line-height: 1.6;
-  color: var(--text-color);
-  opacity: 0.9;
-}
-
-/* Responsive Design for Merge Tactics */
 @media (max-width: 768px) {
-  .merge-card {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-  }
-  
-  .merge-card img {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .merge-arrow {
-    font-size: 1.5rem;
-  }
-  
   .content-section,
-  .merge-examples,
-  .star-upgrade-section,
   .traits-section,
-  .strategies-section,
-  .tips-section {
+  .strategies-section {
     padding: 50px 20px;
-  }
-  
-  .merge-sequence {
-    gap: 5px;
-  }
-  
-  .merge-step img {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .merge-operator {
-    font-size: 1.2rem;
-  }
-  
-  .star-upgrade-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
   }
   
   .traits-grid {
@@ -1264,34 +965,9 @@ main {
 }
 
 @media (max-width: 480px) {
-  .merge-card {
-    padding: 10px;
-  }
-  
-  .merge-card img {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .merge-arrow {
-    font-size: 1.2rem;
-  }
-  
-  .merge-step img {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .merge-operator {
-    font-size: 1rem;
-  }
-  
   .content-grid,
-  .merge-grid,
-  .star-upgrade-grid,
   .traits-grid,
-  .strategy-grid,
-  .tips-grid {
+  .strategy-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1761,6 +1437,86 @@ section h2 {
   text-align: center;
   box-shadow: 0 1px 4px rgba(108,46,183,0.10);
 }
+
+/* Heroes Area Styles */
+.heroes-area {
+  margin: 18px auto 10px 32px;
+  width: 320px;
+  max-width: 95vw;
+  background: none;
+  border-radius: 10px;
+  padding: 10px 0 14px 0;
+  box-shadow: none;
+  text-align: center;
+  display: block;
+}
+
+.heroes-area h3 {
+  color: #f5c542;
+  margin: 0 0 6px 0;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.heroes-drop {
+  min-height: 80px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 2.5px dashed #f5c542;
+  border-radius: 8px;
+  color: #f5c542;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.2s, border 0.2s;
+}
+
+.heroes-drop.dragover {
+  background: #fffbf0;
+  border-color: #ffd700;
+}
+
+.heroes-drop.dragover-invalid {
+  background: #ffe6e6;
+  border-color: #e74c3c;
+  animation: shake 0.5s ease-in-out;
+}
+
+.hero-card {
+  border: 2.5px solid #f5c542;
+  background: #fffbf0;
+  border-radius: 8px;
+  padding: 8px;
+  width: 80px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(245,197,66,0.20);
+  position: relative;
+}
+
+.hero-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.card-hero {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 16px;
+  z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.hero-card-item {
+  border: 2px solid #f5c542;
+  background: #fffbf0;
+}
+
 .deck-buttons-left {
   text-align: center;
   margin: 10px 0 20px 0;
@@ -1831,4 +1587,755 @@ section h2 {
   justify-content: center;
   font-size: 10px;
   font-weight: bold;
-} 
+}
+
+/* Current Season Section Styles */
+.current-season {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.season-banner {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
+  border: 2px solid #f59e0b;
+  position: relative;
+  overflow: hidden;
+}
+
+.season-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="fire" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23fire)"/></svg>');
+  opacity: 0.3;
+}
+
+.season-content {
+  flex: 1;
+  z-index: 1;
+  position: relative;
+}
+
+.season-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.season-subtitle {
+  font-size: 1.2rem;
+  color: #fef3c7;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.season-description {
+  font-size: 1rem;
+  color: #fde68a;
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.season-highlights {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+.highlight-icon {
+  font-size: 1.2rem;
+}
+
+.season-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.season-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.season-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+.furnace-icon {
+  font-size: 4rem;
+  animation: fire-flicker 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.8));
+}
+
+@keyframes fire-flicker {
+  0% {
+    transform: scale(1) rotate(-2deg);
+    filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.8));
+  }
+  50% {
+    transform: scale(1.1) rotate(1deg);
+    filter: drop-shadow(0 0 25px rgba(255, 69, 0, 0.9));
+  }
+  100% {
+    transform: scale(1) rotate(-1deg);
+    filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.8));
+  }
+}
+
+/* Responsive design for season banner */
+@media (max-width: 768px) {
+  .season-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .season-title {
+    font-size: 2rem;
+  }
+  
+  .season-subtitle {
+    font-size: 1rem;
+  }
+  
+  .season-description {
+    font-size: 0.9rem;
+  }
+  
+  .furnace-icon {
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+}
+
+/* Balance Changes Section */
+.balance-changes {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.balance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.balance-section {
+  background: #36393f;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #4a4d52;
+}
+
+.balance-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.balance-title.nerf {
+  color: #ef4444;
+}
+
+.balance-title.buff {
+  color: #10b981;
+}
+
+.balance-title.rework {
+  color: #3b82f6;
+}
+
+.balance-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.balance-card {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-left: 4px solid;
+}
+
+.balance-card.nerf {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.balance-card.buff {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #6ee7b7;
+}
+
+.balance-card.rework {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+  color: #93c5fd;
+}
+
+.furnace-hotfix {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  text-align: center;
+  border: 2px solid #f59e0b;
+}
+
+.furnace-hotfix h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.furnace-hotfix p {
+  color: #fef3c7;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive design for balance changes */
+@media (max-width: 768px) {
+  .balance-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .balance-section {
+    padding: 15px;
+  }
+  
+  .balance-title {
+    font-size: 1.3rem;
+  }
+  
+  .balance-card {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+  
+  .season-highlights {
+    gap: 15px;
+  }
+  
+  .highlight-item {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Strategy Page Styles */
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
+  margin-bottom: 40px;
+}
+
+.hero-section .section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hero-section .section-subtitle {
+  font-size: 1.2rem;
+  color: #fef3c7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.strategy-section {
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.heroes-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .heroes-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroes-grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strategy-card {
+  background: #36393f;
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid #4a4d52;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.strategy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #4a4d52;
+}
+
+.strategy-header h3 {
+  font-size: 1.5rem;
+  color: #f5c542;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+}
+
+.strategy-badge {
+  background: #f5c542;
+  color: #23272a;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.strategy-content h4 {
+  color: #f5c542;
+  font-size: 1.1rem;
+  margin: 20px 0 10px 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.strategy-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.strategy-content li {
+  padding: 8px 0;
+  color: #f5f6fa;
+  border-left: 3px solid #f5c542;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+.strategy-content li strong {
+  color: #f5c542;
+}
+
+.hotfix-notice {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.sources-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.source-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c2f33;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #f5f6fa;
+  border: 1px solid #4a4d52;
+  transition: all 0.3s ease;
+}
+
+.source-link:hover {
+  background: #4a4d52;
+  border-color: #f5c542;
+  transform: translateY(-2px);
+}
+
+.source-arrow {
+  color: #f5c542;
+  font-weight: bold;
+}
+
+.update-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #4a4d52;
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+.update-info p {
+  margin: 5px 0;
+}
+
+/* Responsive design for strategy page */
+@media (max-width: 768px) {
+  .hero-section .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-section .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .strategy-card {
+    padding: 20px;
+  }
+  
+  .strategy-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .strategy-content h4 {
+    font-size: 1rem;
+  }
+  
+  .strategy-content li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Stats Page Styles */
+.stats-section {
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.stats-card {
+  background: #36393f;
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid #4a4d52;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #4a4d52;
+}
+
+.stats-header h3 {
+  font-size: 1.5rem;
+  color: #f5c542;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+}
+
+.stats-badge {
+  background: #f5c542;
+  color: #23272a;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stats-content h4 {
+  color: #f5c542;
+  font-size: 1.1rem;
+  margin: 20px 0 10px 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.meta-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meta-summary li {
+  padding: 8px 0;
+  color: #f5f6fa;
+  border-left: 3px solid #f5c542;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+.meta-summary li strong {
+  color: #f5c542;
+}
+
+.top-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.top-cards-section h4 {
+  color: #f5c542;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.top-cards-section .card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top-cards-section .card-item {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-left: 4px solid;
+}
+
+.top-cards-section .card-item.buff {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+  color: #6ee7b7;
+}
+
+.top-cards-section .card-item.nerf {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.top-cards-section .card-item.rework {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+  color: #93c5fd;
+}
+
+.events-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.event-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 15px;
+  background: #2c2f33;
+  border-radius: 8px;
+  border: 1px solid #4a4d52;
+}
+
+.event-date {
+  background: #f5c542;
+  color: #23272a;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.event-info h4 {
+  color: #f5c542;
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.event-info p {
+  color: #f5f6fa;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive design for stats page */
+@media (max-width: 768px) {
+  .stats-card {
+    padding: 20px;
+  }
+  
+  .stats-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .top-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .event-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .event-date {
+    align-self: flex-start;
+  }
+}
+
+/* Small Season Banner for Deck Maker */
+.season-banner-small {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #f59e0b 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid #f59e0b;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+}
+
+.season-content-small h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.season-content-small p {
+  font-size: 1rem;
+  color: #fef3c7;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.season-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tip {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design for small season banner */
+@media (max-width: 768px) {
+  .season-banner-small {
+    margin: 15px;
+    padding: 15px;
+  }
+  
+  .season-content-small h2 {
+    font-size: 1.3rem;
+  }
+  
+  .season-content-small p {
+    font-size: 0.9rem;
+  }
+  
+  .tip {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Sources Section Styles */
+.sources-section {
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.sources-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.source-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c2f33;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #f5f6fa;
+  border: 1px solid #4a4d52;
+  transition: all 0.3s ease;
+}
+
+.source-link:hover {
+  background: #4a4d52;
+  border-color: #f5c542;
+  transform: translateY(-2px);
+}
+
+.source-arrow {
+  color: #f5c542;
+  font-weight: bold;
+}
+
+.update-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #4a4d52;
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+.update-info p {
+  margin: 5px 0;
+}

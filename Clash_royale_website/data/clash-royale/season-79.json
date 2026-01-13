@@ -1,0 +1,119 @@
+{
+  "season": {
+    "number": 79,
+    "name": "Fire & Ice",
+    "dates": "January 2026",
+    "headline": "New Heroes Wizard and Ice Golem, Hero Wizard Draft, Snowstorm Event, and Crown Chase events with amazing rewards",
+    "metaTitle": "Clash Royale Season 79 (Jan 2026) — Fire & Ice | cooper-huff.com",
+    "metaDescription": "Explore Clash Royale Season 79: Fire & Ice featuring Hero Wizard, Hero Ice Golem, Hero Wizard Draft, Snowstorm Event, and January 2026 balance changes.",
+    "updatedOn": "2026-01-01"
+  },
+  "heroes": {
+    "title": "New Heroes: Wizard and Ice Golem",
+    "description": "Season 79 introduces two powerful new Heroes with contrasting elemental abilities",
+    "heroes": [
+      {
+        "name": "Hero Wizard",
+        "elixir": 5,
+        "ability": "Fiery Flight",
+        "abilityCost": 2,
+        "abilityDescription": "Enhances offensive power with flaming tornadoes that deal splash damage",
+        "unlockRequirement": "200 Hero Fragments",
+        "releaseDate": "January 5, 2026"
+      },
+      {
+        "name": "Hero Ice Golem",
+        "elixir": 2,
+        "ability": "Snowstorm",
+        "abilityCost": 2,
+        "abilityDescription": "Unleashes powerful gusts of wind that slow and freeze nearby enemies, focusing on crowd control and battlefield disruption",
+        "unlockRequirement": "200 Hero Fragments",
+        "releaseDate": "January 19, 2026"
+      }
+    ],
+    "heroSlots": [
+      {
+        "slot": 1,
+        "unlockArena": 15,
+        "unlockTrophies": 5000
+      },
+      {
+        "slot": 2,
+        "unlockArena": 25,
+        "unlockTrophies": 10000
+      }
+    ],
+    "fragments": {
+      "required": 200,
+      "sources": [
+        "Hero Boxes",
+        "Special Events",
+        "Pass Royale (Arena 15+)",
+        "Duplicate Heroes convert to fragments"
+      ]
+    }
+  },
+  "events": [
+    {
+      "name": "Hero Wizard Draft",
+      "dates": "January 5–12, 2026",
+      "description": "Draft your decks while testing the new Hero Wizard in a powered-up Classic Draft format"
+    },
+    {
+      "name": "Snowstorm Event",
+      "dates": "January 19–26, 2026",
+      "description": "Event centered around the Warmth spell featuring Hero Ice Golem"
+    },
+    {
+      "name": "Crown Chase Events",
+      "dates": "Throughout Season 79",
+      "description": "Multiple Crown Chase events with valuable rewards including Baby Dragon Evolution Shards, Hero Boxes, Frostfire Lucky Chests, cosmetics, and more"
+    },
+    {
+      "name": "Clan Voyage",
+      "dates": "Throughout Season 79",
+      "description": "Milestone event returns with two separate voyages across the royal seas. Players are encouraged to join a clan to fully participate"
+    }
+  ],
+  "balanceChanges": {
+    "date": "January 2026",
+    "nerfs": [],
+    "buffs": [],
+    "note": "Balance changes to be announced"
+  },
+  "rewards": {
+    "title": "Season 79 Rewards",
+    "items": [
+      "Battle Banners",
+      "Baby Dragon Evolution Shards",
+      "Hero Boxes",
+      "Frostfire Lucky Chests",
+      "Cosmetics",
+      "Emotes",
+      "Additional in-game items"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Official Season 79 Announcement",
+      "url": "https://clashroyale.com/blog/news/season-79-fire-and-ice",
+      "description": "Supercell's official Season 79 announcement"
+    },
+    {
+      "name": "January 2026 Heroes Update",
+      "url": "https://clashroyale.com/blog/news/january-2026-heroes-update",
+      "description": "Official Heroes system update with Hero Wizard and Hero Ice Golem"
+    },
+    {
+      "name": "January 2026 Balance Changes",
+      "url": "https://clashroyale.com/blog/news/january-2026-balance-changes",
+      "description": "Official January 2026 balance changes"
+    },
+    {
+      "name": "RoyaleAPI Season Overview",
+      "url": "https://royaleapi.com/season/79",
+      "description": "Comprehensive Season 79 overview and statistics"
+    }
+  ]
+}
+

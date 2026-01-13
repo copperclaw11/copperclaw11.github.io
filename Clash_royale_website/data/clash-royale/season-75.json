@@ -1,0 +1,181 @@
+{
+  "season": {
+    "number": 75,
+    "name": "Clan Voyage",
+    "dates": "Sep 1 – Oct 6, 2025",
+    "headline": "Clan-based gameplay with Rare Book of Cards rewards, new events and challenges",
+    "metaTitle": "Clash Royale Season 75 (Sep 2025) — Clan Voyage | cooper-huff.com",
+    "metaDescription": "Explore Clash Royale Season 75: Clan Voyage featuring clan-based gameplay, new events, and rewards. Complete guide to September 2025 season.",
+    "updatedOn": "2025-10-02"
+  },
+  "upcomingSeason": {
+    "number": 76,
+    "name": "Phantom Forces",
+    "startDate": "October 6, 2025",
+    "headline": "Royal Ghost Evolution, Skeleton Army Evolution, Champion System Rework, and Lucky Chests",
+    "newEvolutions": [
+      {
+        "name": "Royal Ghost Evolution",
+        "description": "Summons two 'Souldiers' upon attacking from invisibility, dealing area damage and guarding the Royal Ghost"
+      },
+      {
+        "name": "Skeleton Army Evolution",
+        "description": "Led by General Gerry, making Skeletons invisible and invincible while he's alive; upon his defeat, all Skeletons become vulnerable"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "Clan Voyage",
+      "dates": "Throughout Season 75",
+      "description": "Clan-based gameplay emphasizing teamwork and cooperation with Rare Book of Cards rewards"
+    },
+    {
+      "name": "Season 75 Challenges",
+      "dates": "Sep 1–Oct 6",
+      "description": "Various challenges and events throughout the season"
+    }
+  ],
+  "championSystemRework": {
+    "title": "Champion System Rework (Season 76)",
+    "description": "Major changes to how Champions work in the game",
+    "changes": [
+      "Champions will cycle like normal cards (no more 3-card cycle)",
+      "Only the most recently played Champion will have an active ability",
+      "Active Champion indicated by crown icon",
+      "Ability cooldowns reset upon deploying a new Champion"
+    ]
+  },
+  "luckyChests": {
+    "title": "Lucky Chests (Season 76)",
+    "description": "Replacing Lucky Drops with guaranteed reward chests",
+    "types": [
+      {
+        "name": "Common Lucky Chests",
+        "rewards": "Cards and gold"
+      },
+      {
+        "name": "Magic Lucky Chests", 
+        "rewards": "Cards, gold, magic items, and cosmetics"
+      },
+      {
+        "name": "Seasonal Lucky Chests",
+        "rewards": "Season-themed rewards like Evolution Shards and cosmetics"
+      }
+    ]
+  },
+  "balanceChanges": {
+    "date": "October 6, 2025",
+    "nerfs": [
+      {
+        "card": "Baby Dragon Evolution",
+        "change": "Number of cycles to activate Evolution increased from 1 to 2"
+      },
+      {
+        "card": "Cannon Evolution",
+        "change": "Barrage damage decreased from 353 to 304"
+      },
+      {
+        "card": "Goblin Cage Evolution",
+        "change": "HP decreased from 1,187 to 1,080, Bonus Brawler HP removed"
+      },
+      {
+        "card": "Valkyrie Evolution",
+        "change": "HP decreased from 2,096 to 1,907, Bonus Brawler HP removed"
+      },
+      {
+        "card": "Wall Breakers Evolution",
+        "change": "Death damage decreased from 291 to 258"
+      },
+      {
+        "card": "Witch Evolution",
+        "change": "Heal per skeleton decreased from 76 to 64"
+      },
+      {
+        "card": "Berserker",
+        "change": "Damage decreased from 102 to 97"
+      },
+      {
+        "card": "Bomber",
+        "change": "HP decreased from 332 to 304"
+      },
+      {
+        "card": "Furnace",
+        "change": "Movement speed increased from 45 to 60"
+      },
+      {
+        "card": "Goblin Drill",
+        "change": "First spawn time increased from 0.8 seconds to 1 second"
+      },
+      {
+        "card": "Goblin Giant",
+        "change": "HP decreased from 3,233 to 3,020; backpack attack range decreased from 5.5 to 5 tiles; backpack first hit time increased from 0.4 to 0.5 seconds"
+      },
+      {
+        "card": "Goblin Hut",
+        "change": "HP decreased from 1,228 to 1,180"
+      },
+      {
+        "card": "Goblin Machine",
+        "change": "HP decreased from 2,304 to 2,150; rocket damage decreased from 391 to 304"
+      },
+      {
+        "card": "Guards",
+        "change": "First hit time increased from 0.4 seconds to 0.5 seconds"
+      },
+      {
+        "card": "Ice Wizard",
+        "change": "Slowdown effect hit speed multiplier increased from x0.65 to x0.70; slowdown effect speed multiplier increased from x0.65 to x0.70"
+      },
+      {
+        "card": "Minions",
+        "change": "Hit speed decreased from 1 hit every 1.1 seconds to 1 hit every 1.2 seconds"
+      },
+      {
+        "card": "Rage",
+        "change": "Hit speed multiplier decreased from x1.35 to x1.30 (affects Lumberjack and Barbarians Evolution)"
+      },
+      {
+        "card": "Royal Chef",
+        "change": "HP decreased from 2,921 to 2,703"
+      },
+      {
+        "card": "Skeletons",
+        "change": "Hit speed decreased from 1 hit every 1 second to 1 hit every 1.1 seconds (affects Graveyard, Skeleton Army, Skeleton Barrel, Skeleton King, Tombstone, and Witch)"
+      },
+      {
+        "card": "Vines",
+        "change": "Damage decreased from 335 to 306; number of damage ticks decreased from 5 to 2; duration decreased from 2.5 seconds to 2 seconds"
+      }
+    ],
+    "bugFixes": [
+      {
+        "fix": "Prevent troops from having instant first attack after charge reset",
+        "affectedCards": "Battle Ram, Dark Prince, Prince, Ram Rider, Royal Recruits Evolution"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Official Season 75 Announcement",
+      "url": "https://clashroyale.com/blog/news/season-75-clan-voyage",
+      "description": "Supercell's official Season 75 announcement"
+    },
+    {
+      "name": "Season 76 Preview",
+      "url": "https://clashroyale.com/blog/news/season-76-phantom-forces",
+      "description": "Official Season 76 preview with new evolutions and system changes"
+    },
+    {
+      "name": "October 2025 Balance Changes",
+      "url": "https://clashroyale.com/blog/news/october-2025-balance-changes",
+      "description": "Official October 6, 2025 balance changes"
+    },
+    {
+      "name": "RoyaleAPI Season Overview",
+      "url": "https://royaleapi.com/season/75",
+      "description": "Comprehensive Season 75 overview and statistics"
+    }
+  ]
+}
+

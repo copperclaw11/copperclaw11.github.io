@@ -73,6 +73,58 @@ if (window.location.pathname.includes('deck-maker.html')) {
     // Additional cards with correct elixir costs
     'Battle Healer': 4, 'Zappies': 4, 'Goblin Demolisher': 4, 'Barbarian Hut': 6, 'Elixir Collector': 6, 'Electro Spirit': 1, 'Fire Spirit': 1, 'Goblins': 2, 'Giant Snowball': 2, 'Berserker': 2, 'Arrows': 3, 'Minions': 3, 'Royal Delivery': 3, 'Skeleton Dragons': 4, 'Tesla': 4, 'Minion Horde': 5, 'Rascals': 5, 'Elite Barbarians': 6, 'Royal Recruits': 7
   };
+  // Heroes data (January 2026)
+  const heroesCards = {
+    'Hero Mini P.E.K.K.A': {
+      name: 'Hero Mini P.E.K.K.A',
+      image: 'https://via.placeholder.com/150x180/FFD700/000000?text=Hero+Mini+P.E.K.K.A',
+      elixir: 4,
+      ability: 'Breakfast Boost',
+      abilityCost: 2,
+      abilityDescription: 'Each pancake consumed levels him up by one'
+    },
+    'Hero Musketeer': {
+      name: 'Hero Musketeer',
+      image: 'https://via.placeholder.com/150x180/FFD700/000000?text=Hero+Musketeer',
+      elixir: 4,
+      ability: 'Trusty Turret',
+      abilityCost: 2,
+      abilityDescription: 'Deploys a turret for additional firepower'
+    },
+    'Hero Knight': {
+      name: 'Hero Knight',
+      image: 'https://via.placeholder.com/150x180/FFD700/000000?text=Hero+Knight',
+      elixir: 3,
+      ability: 'Triumphant Taunt',
+      abilityCost: 2,
+      abilityDescription: 'Taunts nearby enemies and gains a shield'
+    },
+    'Hero Giant': {
+      name: 'Hero Giant',
+      image: 'https://via.placeholder.com/150x180/FFD700/000000?text=Hero+Giant',
+      elixir: 5,
+      ability: 'Heroic Hurl',
+      abilityCost: 2,
+      abilityDescription: 'Throws the nearest troop, stunning them and swapping lanes'
+    },
+    'Hero Wizard': {
+      name: 'Hero Wizard',
+      image: 'https://via.placeholder.com/150x180/FFD700/000000?text=Hero+Wizard',
+      elixir: 5,
+      ability: 'Fiery Flight',
+      abilityCost: 2,
+      abilityDescription: 'Enhances offensive power with flaming tornadoes that deal splash damage'
+    },
+    'Hero Ice Golem': {
+      name: 'Hero Ice Golem',
+      image: 'https://via.placeholder.com/150x180/FFD700/000000?text=Hero+Ice+Golem',
+      elixir: 2,
+      ability: 'Snowstorm',
+      abilityCost: 2,
+      abilityDescription: 'Unleashes powerful gusts of wind that slow and freeze nearby enemies, focusing on crowd control and battlefield disruption'
+    }
+  };
+
   // Complete card data by rarity, based on Deck Shop (https://www.deckshop.pro/card/list)
   const cardsByRarity = {
     'Champion': [
@@ -238,6 +290,36 @@ if (window.location.pathname.includes('deck-maker.html')) {
 
   function renderCardList() {
     cardList.innerHTML = '';
+    // Render Heroes section first
+    const heroesSection = document.createElement('section');
+    heroesSection.className = 'rarity-section';
+    const heroesHeader = document.createElement('h4');
+    heroesHeader.textContent = `Hero (${Object.keys(heroesCards).length})`;
+    heroesHeader.setAttribute('data-rarity', 'Hero');
+    heroesSection.appendChild(heroesHeader);
+    const heroesGroup = document.createElement('div');
+    heroesGroup.className = 'card-list';
+    Object.values(heroesCards).forEach(hero => {
+      const cardDiv = document.createElement('div');
+      cardDiv.className = 'card-item hero-card-item';
+      const elixirClass = 'card-elixir';
+      cardDiv.innerHTML = `
+        <div class="${elixirClass}">${hero.elixir}</div>
+        <img src="${hero.image}" alt="${hero.name}">
+        <div class="card-name">${hero.name}</div>
+        <div class="card-hero">👑</div>
+      `;
+      cardDiv.onclick = () => addHero(hero);
+      cardDiv.draggable = true;
+      cardDiv.ondragstart = (e) => {
+        e.dataTransfer.setData('hero-card', hero.name);
+      };
+      heroesGroup.appendChild(cardDiv);
+    });
+    heroesSection.appendChild(heroesGroup);
+    cardList.appendChild(heroesSection);
+    
+    // Render regular card rarities
     for (const rarity in cardsByRarity) {
       const section = document.createElement('section');
       section.className = 'rarity-section';
@@ -668,7 +750,7 @@ if (window.location.pathname.includes('deck-maker.html')) {
 
   // List of evolvable cards (from https://www.deckshop.pro/card/list)
   const evolvableCards = {
-    // Current evolution cards as of 2024
+    // Current evolution cards as of January 2026
     'Archers': 'https://royaleapi.com/static/img/cards-150/archers-evo.png',
     'Bats': 'https://royaleapi.com/static/img/cards-150/bats-evo.png',
     'Barbarians': 'https://royaleapi.com/static/img/cards-150/barbarians-evo.png',
@@ -701,7 +783,11 @@ if (window.location.pathname.includes('deck-maker.html')) {
     'Wizard': 'https://royaleapi.com/static/img/cards-150/wizard-evo.png',
     'Giant Snowball': 'https://royaleapi.com/static/img/cards-150/giant-snowball-evo.png',
     'Tesla': 'https://royaleapi.com/static/img/cards-150/tesla-evo.png',
-    'Royal Recruits': 'https://royaleapi.com/static/img/cards-150/royal-recruits-evo.png'
+    'Royal Recruits': 'https://royaleapi.com/static/img/cards-150/royal-recruits-evo.png',
+    'Baby Dragon': 'https://royaleapi.com/static/img/cards-150/baby-dragon-evo.png',
+    'Royal Ghost': 'https://royaleapi.com/static/img/cards-150/royal-ghost-evo.png',
+    'Skeleton Army': 'https://royaleapi.com/static/img/cards-150/skeleton-army-evo.png',
+    'Royal Hogs': 'https://royaleapi.com/static/img/cards-150/royal-hogs-evo.png'
   };
 
   // Normalize card names for evolvable check
@@ -759,9 +845,22 @@ if (window.location.pathname.includes('deck-maker.html')) {
     return card.image;
   }
 
+  // --- Heroes helper functions ---
+  function isHero(cardName) {
+    return heroesCards.hasOwnProperty(cardName);
+  }
+
+  function getHeroByName(name) {
+    return heroesCards[name] || null;
+  }
+
   // --- Drag-and-drop Evolutions logic ---
   let evolutions = [];
   const evolutionsDrop = document.getElementById('evolutions-drop');
+
+  // --- Drag-and-drop Heroes logic ---
+  let heroes = [];
+  const heroesDrop = document.getElementById('heroes-drop');
 
   function renderEvolutions() {
     // Always show evolutions area
@@ -881,6 +980,11 @@ if (window.location.pathname.includes('deck-maker.html')) {
   }
 
   function addToDeck(card) {
+    // Heroes cannot be added to the regular deck - they use Hero Slots
+    if (isHero(card.name)) {
+      alert('Heroes cannot be added to your regular deck! Use the Heroes area to select Heroes.');
+      return;
+    }
     if (currentDeck.length >= 8) {
       alert('Your deck can only have 8 cards!');
       return;
@@ -905,31 +1009,115 @@ if (window.location.pathname.includes('deck-maker.html')) {
     renderDeck();
   }
 
-  // When clearing deck, also clear evolutions
+  function renderHeroes() {
+    const heroesArea = document.getElementById('heroes-area');
+    if (!heroesArea) return; // Heroes area may not exist on all pages
+    heroesArea.style.display = '';
+    heroesDrop.innerHTML = '';
+    if (heroes.length === 0) {
+      heroesDrop.textContent = 'Drag up to 2 Heroes here';
+    } else {
+      heroes.forEach(hero => {
+        const heroDiv = document.createElement('div');
+        heroDiv.className = 'hero-card';
+        heroDiv.draggable = true;
+        heroDiv.innerHTML = `
+          <div class="card-elixir">${hero.elixir}</div>
+          <img src="${hero.image}" alt="${hero.name}">
+          <div class="card-name">${hero.name}</div>
+          <div class="card-hero">👑</div>
+        `;
+        heroDiv.ondragstart = (e) => {
+          e.dataTransfer.setData('hero-card', hero.name);
+        };
+        heroDiv.onclick = () => {
+          heroes = heroes.filter(h => h.name !== hero.name);
+          renderHeroes();
+        };
+        heroesDrop.appendChild(heroDiv);
+      });
+    }
+  }
+
+  function addHero(hero) {
+    if (heroes.length >= 2) {
+      alert('You can only have up to 2 Heroes!');
+      return;
+    }
+    if (heroes.find(h => h.name === hero.name)) {
+      alert('This Hero is already selected!');
+      return;
+    }
+    heroes.push(hero);
+    renderHeroes();
+  }
+
+  // Heroes drag and drop handlers
+  if (heroesDrop) {
+    heroesDrop.ondragover = (e) => {
+      e.preventDefault();
+      const heroName = e.dataTransfer.getData('hero-card');
+      if (heroName && isHero(heroName)) {
+        heroesDrop.classList.add('dragover');
+      } else {
+        heroesDrop.classList.add('dragover-invalid');
+      }
+    };
+
+    heroesDrop.ondragleave = () => {
+      heroesDrop.classList.remove('dragover');
+      heroesDrop.classList.remove('dragover-invalid');
+    };
+
+    heroesDrop.ondrop = (e) => {
+      e.preventDefault();
+      heroesDrop.classList.remove('dragover');
+      heroesDrop.classList.remove('dragover-invalid');
+      const heroName = e.dataTransfer.getData('hero-card');
+      if (!heroName || !isHero(heroName)) return;
+      if (heroes.length >= 2) return;
+      const hero = getHeroByName(heroName);
+      if (hero && !heroes.some(h => h.name === hero.name)) {
+        heroes.push(hero);
+        renderHeroes();
+      }
+    };
+  }
+
+  // When clearing deck, also clear evolutions and heroes
   clearBtn.onclick = () => {
     currentDeck = [];
     evolutions = [];
+    heroes = [];
     // Reset suggestion tracking when clearing deck
     lastSuggestionNames = [];
     renderDeck();
     renderEvolutions();
+    renderHeroes();
   };
 
-  // When saving, save evolutions too
+  // When saving, save evolutions and heroes too
   saveBtn.onclick = () => {
     localStorage.setItem('clashDeck', JSON.stringify(currentDeck));
     localStorage.setItem('clashDeckEvolutions', JSON.stringify(evolutions.map(c => c.name)));
+    localStorage.setItem('clashDeckHeroes', JSON.stringify(heroes.map(h => h.name)));
     alert('Deck saved!');
   };
 
-  // On load, restore evolutions if possible
+  // On load, restore evolutions and heroes if possible
   if (localStorage.getItem('clashDeckEvolutions')) {
     const evoNames = JSON.parse(localStorage.getItem('clashDeckEvolutions'));
     evolutions = evoNames.map(name => getCardByName(name)).filter(Boolean);
+  }
+
+  if (localStorage.getItem('clashDeckHeroes')) {
+    const heroNames = JSON.parse(localStorage.getItem('clashDeckHeroes'));
+    heroes = heroNames.map(name => getHeroByName(name)).filter(Boolean);
   }
 
   // Initial render
   renderCardList();
   renderDeck();
   renderEvolutions();
+  renderHeroes();
 } 
