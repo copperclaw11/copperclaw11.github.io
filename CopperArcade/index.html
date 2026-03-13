@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copper Arcade - Cooper Huff</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with persistent Copper Bits counter -->
+    <header class="arcade-header">
+        <div class="header-content">
+            <h1 class="arcade-title">
+                <i class="fas fa-coins"></i>
+                Copper Arcade
+            </h1>
+            <div class="header-right">
+                <div class="currency-display">
+                    <span class="currency-label">Copper Bits:</span>
+                    <span id="copper-bits-display" class="currency-amount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="arcade-nav">
+        <button class="nav-btn active" data-page="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="nav-btn" data-page="games">
+            <i class="fas fa-gamepad"></i>
+            <span>Games</span>
+        </button>
+        <button class="nav-btn" data-page="shop">
+            <i class="fas fa-store"></i>
+            <span>Shop</span>
+        </button>
+        <button class="nav-btn" data-page="profile">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </button>
+        <button class="nav-btn" data-page="stats">
+            <i class="fas fa-chart-line"></i>
+            <span>Stats</span>
+        </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="arcade-main">
+        <!-- Home Page -->
+        <section id="home-page" class="page-section active">
+            <div class="container">
+                <div class="welcome-section">
+                    <h2>Welcome to Copper Arcade!</h2>
+                    <p class="welcome-text">
+                        Play exciting mini-games to earn <strong>Copper Bits</strong>! 
+                        Spend your earnings on upgrades to boost your rewards and unlock new possibilities.
+                    </p>
+                </div>
+
+                <div class="games-preview">
+                    <h3>Available Games</h3>
+                    <div class="game-cards">
+                        <div class="game-card-preview">
+                            <div class="game-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4>Reaction Rush</h4>
+                            <p>Test your reflexes! Click when the screen turns green to earn Copper Bits based on your reaction time.</p>
+                            <button class="btn-primary" onclick="gameManager.showPage('games', 'reaction-rush')">
+                                Play Now
+                            </button>
+                        </div>
+
+                        <div class="game-card-preview">
+                            <div class="game-icon">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <h4>Copper Clicker</h4>
+                            <p>Click the copper ore to earn bits! Unlock passive income upgrades to earn even while idle.</p>
+                            <button class="btn-primary" onclick="gameManager.showPage('games', 'copper-clicker')">
+                                Play Now
+                            </button>
+                        </div>
+
+                        <div class="game-card-preview">
+                            <div class="game-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4>Target Shot</h4>
+                            <p>Click targets as they appear! Quick reflexes and accuracy will maximize your earnings.</p>
+                            <button class="btn-primary" onclick="gameManager.showPage('games', 'target-shot')">
+                                Play Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="btn-secondary" onclick="gameManager.showPage('shop')">
+                        <i class="fas fa-store"></i>
+                        Visit Shop
+                    </button>
+                    <button class="btn-secondary" onclick="gameManager.showPage('stats')">
+                        <i class="fas fa-chart-line"></i>
+                        View Stats
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Page -->
+        <section id="games-page" class="page-section">
+            <div class="container">
+                <div class="games-header">
+                    <h2>Games</h2>
+                    <div class="game-selector">
+                        <button class="game-tab active" data-game="reaction-rush">Reaction Rush</button>
+                        <button class="game-tab" data-game="copper-clicker">Copper Clicker</button>
+                        <button class="game-tab" data-game="target-shot">Target Shot</button>
+                    </div>
+                </div>
+
+                <!-- Reaction Rush Game -->
+                <div id="reaction-rush-game" class="game-container active">
+                    <div class="game-area" id="reaction-rush-area">
+                        <div class="fullscreen-currency" id="reaction-rush-currency">
+                            <span class="currency-label">Copper Bits:</span>
+                            <span class="currency-amount" id="reaction-rush-bits">0</span>
+                        </div>
+                        <div class="reaction-controls">
+                            <button class="btn-secondary" id="reaction-pause-btn" style="display: none;">
+                                <i class="fas fa-pause"></i>
+                                Pause
+                            </button>
+                            <button class="btn-secondary" id="reaction-fullscreen-btn">
+                                <i class="fas fa-expand"></i>
+                                Fullscreen
+                            </button>
+                        </div>
+                        <div class="reaction-screen" id="reaction-screen">
+                            <p class="reaction-instruction">Wait for the screen to turn green, then click as fast as you can!</p>
+                            <button class="btn-primary" id="reaction-start-btn">Start Game</button>
+                        </div>
+                        <div class="game-info">
+                            <p id="reaction-result"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copper Clicker Game -->
+                <div id="copper-clicker-game" class="game-container">
+                    <div class="game-area" id="copper-clicker-area">
+                        <div class="fullscreen-currency" id="clicker-currency">
+                            <span class="currency-label">Copper Bits:</span>
+                            <span class="currency-amount" id="clicker-bits">0</span>
+                        </div>
+                        <div class="clicker-controls">
+                            <button class="btn-secondary" id="clicker-pause-btn">
+                                <i class="fas fa-pause"></i>
+                                Pause
+                            </button>
+                            <button class="btn-secondary" id="clicker-shop-btn">
+                                <i class="fas fa-store"></i>
+                                Shop
+                            </button>
+                            <button class="btn-secondary" id="clicker-fullscreen-btn">
+                                <i class="fas fa-expand"></i>
+                                Fullscreen
+                            </button>
+                        </div>
+                        <div class="clicker-game-layout">
+                            <div class="clicker-display">
+                            <div class="ore-container">
+                                <div class="ore-block" id="ore-block">
+                                    <div class="ore-inner">
+                                        <div class="ore-shine"></div>
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                </div>
+                                <div class="particle-container" id="particle-container"></div>
+                            </div>
+                            <div class="clicker-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Bits per click:</span>
+                                    <span class="stat-value" id="click-value">1</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Passive income:</span>
+                                    <span class="stat-value" id="passive-income">0</span>
+                                    <span class="stat-unit">/sec</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clicker-shop-panel" id="clicker-shop-panel">
+                            <div class="shop-panel-header">
+                                <h3>Copper Clicker Shop</h3>
+                                <button class="btn-secondary shop-close-btn" id="clicker-shop-close-btn">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="clicker-shop-items" id="clicker-shop-items">
+                                <!-- Shop items will be populated by copper-clicker.js -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Target Shot Game -->
+                <div id="target-shot-game" class="game-container">
+                    <div class="game-area" id="target-shot-area">
+                        <div class="fullscreen-currency" id="target-shot-currency">
+                            <span class="currency-label">Copper Bits:</span>
+                            <span class="currency-amount" id="target-shot-bits">0</span>
+                        </div>
+                        <div class="target-controls">
+                            <button class="btn-primary" id="target-start-btn">Start Game</button>
+                            <button class="btn-secondary" id="target-stop-btn" style="display: none;">Stop</button>
+                            <button class="btn-secondary" id="target-pause-btn" style="display: none;">
+                                <i class="fas fa-pause"></i>
+                                Pause
+                            </button>
+                            <button class="btn-secondary" id="target-fullscreen-btn">
+                                <i class="fas fa-expand"></i>
+                                Fullscreen
+                            </button>
+                            <p>Score: <span id="target-score">0</span></p>
+                        </div>
+                        <div class="target-canvas-container">
+                            <canvas id="target-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Page -->
+        <section id="shop-page" class="page-section">
+            <div class="container">
+                <h2>Upgrade Shop</h2>
+                <p class="shop-description">Spend your Copper Bits on upgrades that boost your earnings across all games!</p>
+                <div id="shop-items" class="shop-grid">
+                    <!-- Shop items will be populated by shop.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Page -->
+        <section id="stats-page" class="page-section">
+            <div class="container">
+                <h2>Your Statistics</h2>
+                <div id="stats-content" class="stats-grid">
+                    <!-- Stats will be populated by stats.js -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="utils.js"></script>
+    <script src="script.js"></script>
+    <script src="shop.js"></script>
+    <script src="stats.js"></script>
+    <script src="games/reaction-rush.js"></script>
+    <script src="games/copper-clicker.js"></script>
+    <script src="games/target-shot.js"></script>
+</body>
+</html>
