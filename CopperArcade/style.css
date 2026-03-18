@@ -113,6 +113,11 @@ body {
     font-family: 'JetBrains Mono', monospace;
 }
 
+.currency-amount.infinity-value,
+.stat-value.infinity-value {
+    font-size: 2.25rem;
+}
+
 /* Navigation */
 .arcade-nav {
     background: var(--bg-secondary);
@@ -350,8 +355,7 @@ body {
 }
 
 #reaction-rush-area:fullscreen,
-#copper-clicker-area:fullscreen,
-#target-shot-area:fullscreen {
+#copper-clicker-area:fullscreen {
     background: var(--bg-primary);
     padding: var(--spacing-lg);
 }
@@ -372,8 +376,7 @@ body {
 }
 
 #reaction-rush-area:fullscreen .fullscreen-currency,
-#copper-clicker-area:fullscreen .fullscreen-currency,
-#target-shot-area:fullscreen .fullscreen-currency {
+#copper-clicker-area:fullscreen .fullscreen-currency {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -673,11 +676,6 @@ body {
     font-size: 0.9rem;
 }
 
-#target-shot-area:fullscreen #target-canvas {
-    width: calc(100vw - 100px);
-    height: calc(100vh - 200px);
-}
-
 .reaction-screen {
     width: 100%;
     height: 400px;
@@ -933,40 +931,6 @@ body {
         opacity: 0;
         transform: translateY(-150px) translateX(var(--particle-x, 0)) scale(0.5);
     }
-}
-
-/* Target Shot Game */
-.target-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    flex-wrap: wrap;
-}
-
-.target-controls p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-}
-
-.target-controls span {
-    color: var(--copper-accent);
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
-.target-canvas-container {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--spacing-md);
-}
-
-#target-canvas {
-    background: var(--bg-primary);
-    border: 2px solid var(--copper-primary);
-    border-radius: 0.5rem;
-    cursor: crosshair;
 }
 
 /* Shop Page */

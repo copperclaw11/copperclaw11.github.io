@@ -9,13 +9,6 @@ class ShopManager {
                 description: 'Increases Reaction Rush rewards by 10% per level',
                 baseCost: 50,
                 effect: (level) => 1 + (level * 0.1)
-            },
-            {
-                id: 'target-scanner',
-                name: 'Target Scanner',
-                description: 'Targets stay visible 0.5 seconds longer per level',
-                baseCost: 75,
-                effect: (level) => level * 0.5
             }
         ];
     }

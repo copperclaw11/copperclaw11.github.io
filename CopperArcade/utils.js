@@ -26,8 +26,7 @@ function loadGameState() {
     return {
         copperBits: 0,
         upgrades: [
-            { id: 'faster-reflexes', level: 0 },
-            { id: 'target-scanner', level: 0 }
+            { id: 'faster-reflexes', level: 0 }
         ],
         clickerUpgrades: [
             { id: 'copper-pickaxe', level: 0 },
@@ -40,11 +39,9 @@ function loadGameState() {
             totalBitsEarned: 0,
             fastestReaction: null,
             clickerClicks: 0,
-            targetsHit: 0,
             gamesPlayed: {
                 reactionRush: 0,
-                copperClicker: 0,
-                targetShot: 0
+                copperClicker: 0
             }
         }
     };
@@ -52,6 +49,9 @@ function loadGameState() {
 
 // Format large numbers (1000 -> 1K, 1000000 -> 1M, etc.)
 function formatNumber(num) {
+    if (!Number.isFinite(num)) {
+        return '∞';
+    }
     if (num >= 1000000000) {
         return (num / 1000000000).toFixed(2) + 'B';
     }
@@ -76,9 +76,6 @@ function applyUpgrades(baseReward, upgradeId, upgrades) {
             // +10% per level
             multiplier = 1 + (upgrade.level * 0.1);
             break;
-        case 'target-scanner':
-            // This affects visibility time, not rewards
-            return baseReward;
     }
     
     return Math.floor(baseReward * multiplier);
@@ -91,9 +88,3 @@ function getCopperMagnetBonus(upgrades) {
     return upgrade.level * 5;
 }
 
-// Get target scanner visibility time bonus
-function getTargetScannerBonus(upgrades) {
-    const upgrade = upgrades.find(u => u.id === 'target-scanner');
-    if (!upgrade) return 0;
-    return upgrade.level * 0.5; // +0.5 seconds per level
-}

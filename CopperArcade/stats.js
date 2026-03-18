@@ -8,11 +8,9 @@ class StatsManager {
                 totalBitsEarned: 0,
                 fastestReaction: null,
                 clickerClicks: 0,
-                targetsHit: 0,
                 gamesPlayed: {
                     reactionRush: 0,
-                    copperClicker: 0,
-                    targetShot: 0
+                    copperClicker: 0
                 }
             };
             saveGameState(gameState);
@@ -31,11 +29,6 @@ class StatsManager {
         saveGameState(gameState);
     }
 
-    recordTargetHit() {
-        gameState.stats.targetsHit++;
-        saveGameState(gameState);
-    }
-
     recordGamePlayed(gameType) {
         if (gameState.stats.gamesPlayed[gameType] !== undefined) {
             gameState.stats.gamesPlayed[gameType]++;
@@ -49,16 +42,21 @@ class StatsManager {
 
         const stats = gameState.stats;
 
+        const totalEarned = stats.totalBitsEarned;
+        const balance = gameState.copperBits;
+        const clicks = stats.clickerClicks;
+        const gamesPlayedSum = stats.gamesPlayed.reactionRush + stats.gamesPlayed.copperClicker;
+
         statsContainer.innerHTML = `
             <div class="stat-card">
                 <h3>Total Copper Bits Earned</h3>
-                <div class="stat-value">${formatNumber(stats.totalBitsEarned)}</div>
+                <div class="stat-value ${!Number.isFinite(totalEarned) ? 'infinity-value' : ''}">${formatNumber(totalEarned)}</div>
                 <div class="stat-label">Lifetime earnings</div>
             </div>
 
             <div class="stat-card">
                 <h3>Current Balance</h3>
-                <div class="stat-value">${formatNumber(gameState.copperBits)}</div>
+                <div class="stat-value ${!Number.isFinite(balance) ? 'infinity-value' : ''}">${formatNumber(balance)}</div>
                 <div class="stat-label">Copper Bits</div>
             </div>
 
@@ -70,27 +68,16 @@ class StatsManager {
 
             <div class="stat-card">
                 <h3>Total Clicks</h3>
-                <div class="stat-value">${formatNumber(stats.clickerClicks)}</div>
+                <div class="stat-value ${!Number.isFinite(clicks) ? 'infinity-value' : ''}">${formatNumber(clicks)}</div>
                 <div class="stat-label">Copper Clicker</div>
             </div>
 
             <div class="stat-card">
-                <h3>Targets Hit</h3>
-                <div class="stat-value">${formatNumber(stats.targetsHit)}</div>
-                <div class="stat-label">Target Shot</div>
-            </div>
-
-            <div class="stat-card">
                 <h3>Games Played</h3>
-                <div class="stat-value">${formatNumber(
-                    stats.gamesPlayed.reactionRush + 
-                    stats.gamesPlayed.copperClicker + 
-                    stats.gamesPlayed.targetShot
-                )}</div>
+                <div class="stat-value ${!Number.isFinite(gamesPlayedSum) ? 'infinity-value' : ''}">${formatNumber(gamesPlayedSum)}</div>
                 <div class="stat-label">
                     Rush: ${stats.gamesPlayed.reactionRush} | 
-                    Clicker: ${stats.gamesPlayed.copperClicker} | 
-                    Shot: ${stats.gamesPlayed.targetShot}
+                    Clicker: ${stats.gamesPlayed.copperClicker}
                 </div>
             </div>
         `;

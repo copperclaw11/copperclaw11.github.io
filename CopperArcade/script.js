@@ -45,24 +45,25 @@ class CopperBitsManager {
     }
 
     updateDisplay() {
+        const bits = gameState.copperBits;
+        const isInfinity = !Number.isFinite(bits);
+        const formatted = formatNumber(bits);
+
         const display = document.getElementById('copper-bits-display');
         if (display) {
-            display.textContent = formatNumber(gameState.copperBits);
+            display.textContent = formatted;
+            display.classList.toggle('infinity-value', isInfinity);
         }
-        
-        // Update fullscreen currency displays
+
         const reactionBits = document.getElementById('reaction-rush-bits');
         const clickerBits = document.getElementById('clicker-bits');
-        const targetBits = document.getElementById('target-shot-bits');
-        
         if (reactionBits) {
-            reactionBits.textContent = formatNumber(gameState.copperBits);
+            reactionBits.textContent = formatted;
+            reactionBits.classList.toggle('infinity-value', isInfinity);
         }
         if (clickerBits) {
-            clickerBits.textContent = formatNumber(gameState.copperBits);
-        }
-        if (targetBits) {
-            targetBits.textContent = formatNumber(gameState.copperBits);
+            clickerBits.textContent = formatted;
+            clickerBits.classList.toggle('infinity-value', isInfinity);
         }
     }
 
@@ -160,6 +161,7 @@ class GameManager {
             gameElement.classList.add('active');
             this.currentGame = gameId;
         }
+
     }
 }
 
